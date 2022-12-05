@@ -7,9 +7,12 @@
 }
 
 #main {
-  font-size: 120%;
-  border-right: 1px solid aliceblue;
-  padding-right: 2rem;
+  font-size: 150%;
+  /*border-right: 1px solid aliceblue;*/
+  /*padding-right: 1rem;*/
+  font-family: Calligraffitti;
+  letter-spacing: 0.15em;
+  transform: translateY(0.2em);
 }
 
 a {
