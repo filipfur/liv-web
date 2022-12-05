@@ -1,0 +1,46 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: rgb(184, 157, 122);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.Page {
+  display: inline-flex;
+  flex-direction: column;
+  background-color: #fff2;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.Bread {
+  margin: 0.5em 0 0 1em;
+}
+
+.Bread h2 {
+  color: black;
+}
+
+.Bread p {
+  color: black;
+}
+
+.Page img {
+  border-radius: 8px 8px 0 0;
+}
+
+#glCanvas {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
