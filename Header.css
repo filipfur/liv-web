@@ -2,12 +2,16 @@
   display: flex;
   justify-content: center;
   padding: 0;
-  margin: 3em 0;
+  margin: 2rem 0 2rem 0;
+  align-items: center;
 }
 
-.Header a {
+#main {
+  font-size: 120%;
+  border-right: 1px solid aliceblue;
+  padding-right: 2rem;
+}
+
+a {
   margin: 0 1em;
-  padding: 0;
-  text-decoration: none;
-  color: aliceblue;
 }

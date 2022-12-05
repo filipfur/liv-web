@@ -6,10 +6,9 @@ import HeaderButton from './HeaderButton';
 export default function Header() {
   return (
     <div className="Header">
-      <HeaderButton id={"main"} label="Lunar enlightment" />
-      <div style={{ width: '1px', background: 'lightgray' }} />
-      <HeaderButton label="About" />
-      <HeaderButton label="Cacao" />
+      <HeaderButton id={'main'} label="Lunar enlightment" />
+      <HeaderButton label="Om mig" />
+      <HeaderButton label="Kontakt" />
     </div>
   );
 }
