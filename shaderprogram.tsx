@@ -1,49 +1,51 @@
 export class ShaderProgram {
-  gl: any;
   internal: any;
   locations: any;
 
-  constructor(gl, vsSource, fsSource) {
-    this.gl = gl;
-    this.internal = initShaderProgram(gl, vsSource, fsSource);
+  constructor(vsSource, fsSource) {
+    this.internal = initShaderProgram(vsSource, fsSource);
     this.locations = {};
   }
 
   use() {
-    this.gl.useProgram(this.internal);
+    globalThis.gl.useProgram(this.internal);
   }
 
   loadLocation(name) {
     if (name in this.locations == false) {
-      this.locations[name] = this.gl.getUniformLocation(this.internal, name);
+      this.locations[name] = globalThis.gl.getUniformLocation(
+        this.internal,
+        name
+      );
     }
   }
 
   setUniform1f(name, value) {
     this.loadLocation(name);
-    this.gl.uniform1f(this.locations[name], value);
+    globalThis.gl.uniform1f(this.locations[name], value);
   }
 
   setUniform2f(name, value) {
     this.loadLocation(name);
-    this.gl.uniform2f(this.locations[name], value);
+    globalThis.gl.uniform2f(this.locations[name], value);
   }
 
   setUniform3f(name, value) {
     this.loadLocation(name);
-    this.gl.uniform3f(this.locations[name], value);
+    globalThis.gl.uniform3f(this.locations[name], value);
   }
 
   setUniform4f(name, value) {
     this.loadLocation(name);
-    this.gl.uniform4f(this.locations[name], value);
+    globalThis.gl.uniform4f(this.locations[name], value);
   }
 }
 
 //
 // Initialize a shader program, so WebGL knows how to draw our data
 //
-export function initShaderProgram(gl, vsSource, fsSource) {
+export function initShaderProgram(vsSource, fsSource) {
+  let gl = globalThis.gl;
   const vertexShader = loadShader(gl, gl.VERTEX_SHADER, vsSource);
   const fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, fsSource);
 

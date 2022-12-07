@@ -6,6 +6,8 @@ import './App.css';
 import Header from './Header.tsx';
 //import { initShaderProgram } from './shader.js';
 
+import './webglcontext';
+
 import { ShaderProgram } from './shaderprogram';
 
 export default function App() {
@@ -41,15 +43,14 @@ export default function App() {
     `;
 
     const canvas = document.querySelector('#glCanvas');
-    const gl = canvas.getContext('webgl');
+    globalThis.gl = canvas.getContext('webgl');
     if (gl === null) {
       alert(
         'Unable to initialize WebGL. Your browser or machine may not support it.'
       );
       return;
     }
-
-    const shaderProgram = new ShaderProgram(gl, vsSource, fsSource);
+    const shaderProgram = new ShaderProgram(vsSource, fsSource);
 
     const positionBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
